@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Избор на кола</title>
+</head>
+<body>
+    <h1>Избор на кола по дума или израз</h1>
+
+    <form method="POST">
+        <label>Въведи дума или израз (например: "евтина", "спортна", "място"):</label><br>
+        <input type="text" name="keyword" required>
+        <button type="submit">Търси</button>
+    </form>
+
+    {% if result %}
+        <h2>Най-добрата кола за: "{{ keyword }}"</h2>
+        <p><strong>{{ result["name"] }}</strong></p>
+        <ul>
+            {% for r in result["matched_reviews"] %}
+                <li>{{ r }}</li>
+            {% endfor %}
+        </ul>
+    {% elif keyword %}
+        <p>Няма ревюта с тази дума/фраза.</p>
+    {% endif %}
+</body>
+</html>
