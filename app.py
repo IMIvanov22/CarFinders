@@ -6,7 +6,6 @@ from flask import Flask, render_template, send_from_directory
 app = Flask(__name__)
 analyzer = SentimentIntensityAnalyzer()
 
-# Данни за колите и техните ревюта
 cars = [
     {
         "name": "Toyota Corolla",
@@ -94,8 +93,6 @@ cars = [
 @app.route('/pages/<path:filename>')
 def serve_page(filename):
     return send_from_directory('pages', filename)
-    
-
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -104,27 +101,18 @@ def index():
 
     if request.method == "POST":
         keyword = request.form["keyword"].lower()
-        best_car = None
-        best_score = float('-inf')
+        filtered_cars = []
 
         for car in cars:
-            matched_reviews = []
-            total_score = 0
-
-            for review in car["reviews"]:
-                if keyword in review.lower():
-                    matched_reviews.append(review)
-                    sentiment = analyzer.polarity_scores(review)["compound"]
-                    total_score += sentiment
-
-            if matched_reviews and total_score > best_score:
-                best_score = total_score
-                best_car = {
+            matched_reviews = [review for review in car["reviews"] if keyword in review.lower()]
+            if matched_reviews:
+                filtered_cars.append({
                     "name": car["name"],
                     "matched_reviews": matched_reviews
-                }
+                })
 
-        result = best_car
+        if filtered_cars:
+            result = filtered_cars[:3]  # топ 3 коли с намерени ревюта
 
     return render_template("index.html", result=result, keyword=keyword)
 

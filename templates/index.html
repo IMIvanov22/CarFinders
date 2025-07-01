@@ -2,35 +2,38 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Избор на кола</title>
+    <title>Car Selection</title>
     <link rel="stylesheet" href="/static/style.css">
     <div class="navbar">
         <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/pages/searchforcars.html">Found Cars</a></li>
-    <li><a href="/pages/contactus.html">Contac Us</a></li>
-    <li><a href="/pages/aboutus.html">About Us</a></li>
-    </ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/searchforcars.html">Found Cars</a></li>
+            <li><a href="/pages/contactus.html">Contact Us</a></li>
+            <li><a href="/pages/aboutus.html">About Us</a></li>
+        </ul>
     </div>
 </head>
 <body>
 
     <form method="POST">
-        <label>Въведи дума или израз (например: "евтина", "спортна", "място"):</label><br>
+        <label>Enter a word or phrase (e.g. "cheap", "sporty", "space"):</label><br>
         <input type="text" name="keyword" required>
-        <button type="submit">Търси</button>
+        <button type="submit">Search</button>
     </form>
 
     {% if result %}
-        <h2>Най-добрата кола за: "{{ keyword }}"</h2>
-        <p><strong>{{ result["name"] }}</strong></p>
-        <ul>
-            {% for r in result["matched_reviews"] %}
-                <li>{{ r }}</li>
-            {% endfor %}
-        </ul>
+        <h2>Found cars for: "{{ keyword }}"</h2>
+        {% for car in result %}
+            <h3>{{ car.name }}</h3>
+            <ul>
+                {% for review in car.matched_reviews %}
+                    <li>{{ review }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
     {% elif keyword %}
-        <p>Няма ревюта с тази дума/фраза.</p>
+        <p>No reviews found with this word/phrase.</p>
     {% endif %}
+
 </body>
 </html>
