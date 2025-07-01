@@ -112,7 +112,7 @@ def index():
                 })
 
         if filtered_cars:
-            result = filtered_cars[:3]  # топ 3 коли с намерени ревюта
+            result = filtered_cars[:3]
 
     return render_template("index.html", result=result, keyword=keyword)
 
