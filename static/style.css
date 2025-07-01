@@ -1,13 +1,13 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8; /* светло синьо-сив фон */
+    background-color: #f0f4f8;
     color: #333;
 }
 
 .navbar {
     width: 100%;
-    background: linear-gradient(90deg, #004e92, #000428); /* плавен син градиент */
+    background: linear-gradient(90deg, #004e92, #000428);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -17,15 +17,11 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 40px; /* пространство между линковете */
-}
-
-.navbar li {
-    /* премахнат float, защото използваме flex */
+    gap: 40px;
 }
 
 .navbar a {
-    color: #a2d5f2; /* светло синьо */
+    color: #a2d5f2;
     text-decoration: none;
     padding: 15px 25px;
     display: block;
@@ -37,7 +33,7 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #82c0cc; /* меко синьо-зелен hover */
-    color: #003845; /* по-тъмен текст при hover */
+    background-color: #82c0cc;
+    color: #003845;
     box-shadow: 0 4px 10px rgba(130,192,204,0.5);
 }
