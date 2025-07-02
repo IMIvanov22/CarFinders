@@ -25,7 +25,7 @@
     </form>
 
     {% if result %}
-        <h2>Found cars for: "{{ keyword }}"</h2>
+        <h2>Found cars with keyword: "{{ keyword }}"</h2>
         {% for car in result %}
             <h3>{{ car.name }}</h3>
             <ul>
