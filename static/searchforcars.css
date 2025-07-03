@@ -1,0 +1,117 @@
+/* Цялата страница */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2); /* Синьо-сив фон */
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Заглавието */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #003b73;
+    font-size: 36px;
+}
+
+/* Форма за търсене */
+#search-form {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#search-form label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#search-form input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+#search-form input[type="text"]:focus {
+    border-color: #0077b6;
+    outline: none;
+}
+
+#search-form button {
+    padding: 12px 24px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#search-form button:hover {
+    background-color: #005f8a;
+}
+
+/* Контейнер за резултати */
+#results-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Всеки блок за кола */
+.car-block {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.car-block:hover {
+    transform: translateY(-3px);
+}
+
+.car-block img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.car-block h3 {
+    margin-top: 0;
+    color: #003b73;
+}
+
+.car-block a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.car-block a:hover {
+    text-decoration: underline;
+}
+
+.car-block ul {
+    padding-left: 20px;
+}
+
+.car-block li {
+    margin-bottom: 8px;
+}
