@@ -44,18 +44,6 @@ cars = [
         ]
     },
     {
-        "name": "Audi A4",
-        "image": "https://www.mobile.bg/obiava-11746870045791375-audi-a4-matrix-face-40-tdi-quattro-digital-distronik-kamer",
-        "link": "audi a4.jfif",
-        "reviews": [
-            "Very smooth driving experience",
-            "High-quality interior",
-            "Excellent fuel economy",
-            "Packed with features",
-            "Feels premium inside and out"
-        ]
-    },
-    {
         "name": "Mercedes-Benz C-Class",
         "image": "mercedes benz.jfif",
         "link": "https://www.mobile.bg/obiava-11734076006609311-mercedes-benz-c-200-amg-digital-face-de-distr-pano-camera-car-play-liz",
@@ -101,6 +89,78 @@ cars = [
             "Minimalist interior design",
             "Great electric range",
             "Expensive but futuristic"
+        ]
+    },
+    {
+        "name": "Skoda Octavia",
+        "image": "skoda octavia.jfif",
+        "link": "https://www.mobile.bg/obiava-11751228679315393-skoda-octavia-1-6tdi-105hp-6sk-4h4",
+        "reviews": [
+            "Practical and spacious",
+            "Great fuel economy",
+            "Affordable service costs",
+            "Ideal for families",
+            "Well-built interior"
+        ]
+    },
+    {
+        "name": "Peugeot 3008",
+        "image": "peugeot 3008.jfif",
+        "link": "https://www.mobile.bg/obiava-11740994314187557-peugeot-3008-1-2i-nov-vnos",
+        "reviews": [
+            "Stylish SUV design",
+            "Good fuel efficiency",
+            "Comfortable seating",
+            "Advanced infotainment system",
+            "Smooth suspension"
+        ]
+    },
+    {
+        "name": "Hyundai Tucson",
+        "image": "hyundai tucson.jfif",
+        "link": "https://www.mobile.bg/obiava-21751107546399169-hyundai-tucson-1-6d",
+        "reviews": [
+            "Reliable and efficient",
+            "Spacious and comfortable",
+            "Great warranty coverage",
+            "Good for city and off-road",
+            "Modern looks"
+        ]
+    },
+    {
+        "name": "Renault Clio",
+        "image": "renault clio.jfif",
+        "link": "https://www.mobile.bg/obiava-11715967416167993-renault-clio-1-0",
+        "reviews": [
+            "Compact and agile",
+            "Perfect for city driving",
+            "Low fuel consumption",
+            "Easy to park",
+            "Good value for money"
+        ]
+    },
+    {
+        "name": "Mazda CX-5",
+        "image": "mazda cx5.jfif",
+        "link": "https://www.mobile.bg/obiava-21732117592198766-mazda-cx-5-2-2d-navi-kamera-lizing",
+        "reviews": [
+            "Fun to drive",
+            "Sporty design",
+            "Comfortable ride",
+            "Great handling",
+            "Reliable Japanese quality"
+        ]
+    },
+    {
+        "name": "Kia Sportage",
+        "image": "kia sportage.jfif",
+        "link": "https://www.mobile.bg/obiava-21742321161606537-kia-sportage-4x4",
+        "reviews": [
+            "Solid SUV for the price",
+            "Plenty of space inside",
+            "Good fuel efficiency",
+            "Nice tech features",
+            "Sleek and modern look"
         ]
     }
 ]
