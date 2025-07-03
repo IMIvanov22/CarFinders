@@ -9,6 +9,8 @@ analyzer = SentimentIntensityAnalyzer()
 cars = [
     {
         "name": "Toyota Corolla",
+        "image": "toyota corolla.jfif",
+        "link": "https://www.mobile.bg/obiava-11748529363630123-toyota-corolla-1-4d",
         "reviews": [
             "Affordable and fuel-efficient",
             "Perfect for families",
@@ -89,53 +91,31 @@ cars = [
     }
 ]
 
-
 @app.route('/pages/<path:filename>')
 def serve_page(filename):
     return send_from_directory('pages', filename)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    result = None
-    keyword = ""
-
-    if request.method == "POST":
-        keyword = request.form["keyword"].lower()
-        filtered_cars = []
-
-        for car in cars:
-            matched_reviews = [review for review in car["reviews"] if keyword in review.lower()]
-            if matched_reviews:
-                filtered_cars.append({
-                    "name": car["name"],
-                    "matched_reviews": matched_reviews
-                })
-
-        if filtered_cars:
-            result = filtered_cars[:3]
-
-    return render_template("index.html", result=result, keyword=keyword)
+    return render_template("index.html")
 
 @app.route('/GetCar', methods=["GET", "POST"])
 def GetCar():
-    result = None
-    keyword = ""
+    keyword = request.form.get("keyword", "").lower()
+    filtered_cars = []
 
-    if request.method == "POST":
-        keyword = request.form["keyword"].lower()
-        filtered_cars = []
+    for car in cars:
+        matched_reviews = [review for review in car["reviews"] if keyword in review.lower()]
+        if matched_reviews:
+            filtered_cars.append({
+                "name": car["name"],
+                "image": car.get("image", ""),
+                "link": car.get("link", ""),
+                "matched_reviews": matched_reviews
+            })
 
-        for car in cars:
-            matched_reviews = [review for review in car["reviews"] if keyword in review.lower()]
-            if matched_reviews:
-                filtered_cars.append({
-                    "name": car["name"],
-                    "matched_reviews": matched_reviews
-                })
-
-        if filtered_cars:
-            result = filtered_cars[:3]
-        return jsonify({"result": result, "keyword": keyword})
+    result = filtered_cars[:3] if filtered_cars else []
+    return jsonify({"result": result, "keyword": keyword})
 
 if __name__ == "__main__":
     app.run(debug=True)
