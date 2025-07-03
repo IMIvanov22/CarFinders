@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CarFinders Home</title>
+    <title>CarFinders | Home</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/home.css">
 </head>
 <body>
 
@@ -19,14 +20,47 @@
         </ul>
     </div>
 
-    <div style="padding: 50px; text-align: center;">
+    <header class="hero">
         <h1>Welcome to CarFinders</h1>
-        <p style="font-size: 20px; max-width: 700px; margin: 0 auto;">
-            Your trusted place to discover the perfect car through real user reviews.
-            Start by entering a keyword such as <em>"reliable"</em>, <em>"sporty"</em>, or <em>"family"</em>.
-        </p>
-    </div>
+        <p>Your trusted place to discover the perfect car through real user reviews.</p>
+        <p class="keywords">Start by entering a keyword like <em>"reliable"</em>, <em>"sporty"</em>, or <em>"family"</em>.</p>
+    </header>
+
+    <section class="intro">
+        <h2>Why Choose CarFinders?</h2>
+        <p>We analyze thousands of real user reviews using natural language processing (NLTK) to help you find the car that truly fits your lifestyle and needs.</p>
+        <p>Whether you're looking for a fuel-efficient city car, a spacious family SUV, or a powerful sports car — we've got you covered.</p>
+    </section>
+
+    <section class="car-gallery">
+        <h2>Popular Picks</h2>
+        <div class="car-images">
+            <img src="/static/images/bmw m3.jfif" alt="Sporty Car">
+            <img src="/static/images/audi a4.jfif" alt="Family SUV">
+            <img src="/static/images/tesla model 3.jfif" alt="Electric Car">
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Our Features</h2>
+        <ul>
+            <li>Smart keyword-based search powered by NLTK</li>
+            <li>Real user sentiment analysis</li>
+            <li>Thousands of car models reviewed</li>
+        </ul>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <blockquote>
+            “I found the perfect hybrid SUV for my family thanks to CarFinders. The keyword search is genius!”<br>
+            <span>— Maria T., Sofia</span>
+        </blockquote>
+        <blockquote>
+            “As a car enthusiast, I love how easy it is to filter by performance and reliability.”<br>
+            <span>— Ivan D., Plovdiv</span>
+        </blockquote>
+    </section>
 
 </body>
 </html>
-
