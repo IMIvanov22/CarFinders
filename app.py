@@ -1,11 +1,14 @@
+# Import necessary modules from Flask
 from flask import Flask, render_template, request, jsonify
+# Import sentiment analyzer from VADER
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from flask import send_from_directory
-from flask import Flask, render_template, send_from_directory
 
+from flask import send_from_directory
+# Create an instance of the sentiment analyzer
 app = Flask(__name__)
 analyzer = SentimentIntensityAnalyzer()
 
+# Sample car data with names, images, links, and user reviews
 cars = [
     {
         "name": "Toyota Corolla",
@@ -165,19 +168,24 @@ cars = [
     }
 ]
 
+# Route to serve static HTML pages from the 'pages' directory
 @app.route('/pages/<path:filename>')
 def serve_page(filename):
     return send_from_directory('pages', filename)
 
+# Route for the homepage
 @app.route("/", methods=["GET", "POST"])
 def index():
     return render_template("index.html")
 
+# API route that processes user input and returns matching cars
 @app.route('/GetCar', methods=["GET", "POST"])
 def GetCar():
+    # Get the keyword entered by the user
     keyword = request.form.get("keyword", "").lower()
     filtered_cars = []
 
+ # Check each car's reviews for a match with the keyword
     for car in cars:
         matched_reviews = [review for review in car["reviews"] if keyword in review.lower()]
         if matched_reviews:
@@ -185,11 +193,15 @@ def GetCar():
                 "name": car["name"],
                 "image": car.get("image", ""),
                 "link": car.get("link", ""),
-                "matched_reviews": matched_reviews
+                "matched_reviews": matched_reviews # Include only matching reviews
             })
 
+# Limit the result to the first 3 matching cars
     result = filtered_cars[:3] if filtered_cars else []
+# Return the result as JSON
     return jsonify({"result": result, "keyword": keyword})
 
+
+# Run the app in debug mode
 if __name__ == "__main__":
     app.run(debug=True)

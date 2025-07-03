@@ -1,29 +1,71 @@
+/* General body styles */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+    background-color: #f0f4f8; /* Light gray-blue background */
+    color: #333; /* Dark text color for readability */
 }
 
+/* Navbar container */
 .navbar {
-  position: relative;
-  background: linear-gradient(90deg, #004e92, #000428);
-  height: 80px;
-  display: flex;
-  align-items: center;
-  padding: 0 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    background: linear-gradient(90deg, #004e92, #000428); /* Blue gradient background */
+    height: 80px;
+    display: flex;
+    align-items: center; /* Vertically center contents */
+    padding: 0 30px; /* Horizontal padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow under navbar */
 }
 
+/* Remove list styling and create horizontal layout for nav items */
 .navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px; /* Space between nav items */
 }
 
+/* Style for all navbar links */
 .navbar a {
+    color: #a2d5f2; /* Light blue text */
+    text-decoration: none;
+    padding: 15px 25px; /* Space inside links */
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+    background-color: #82c0cc; /* Light teal background on hover */
+    color: #003845; /* Darker text on hover */
+    box-shadow: 0 4px 10px rgba(130,192,204,0.5); /* Subtle glow */
+}
+
+/* Logo image in the navbar */
+.logo-fixed img {
+    height: 60px;
+    width: auto; /* Keep aspect ratio */
+}
+
+/* Center the nav menu horizontally */
+.nav-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centering trick */
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Redundant but consistent styling for nav links inside .nav-menu */
+.nav-menu a {
     color: #a2d5f2;
     text-decoration: none;
     padding: 15px 25px;
@@ -35,57 +77,26 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar a:hover {
+/* Hover effect specifically for nav-menu links */
+.nav-menu a:hover {
     background-color: #82c0cc;
     color: #003845;
     box-shadow: 0 4px 10px rgba(130,192,204,0.5);
 }
 
-.logo-fixed img {
-    height: 60px;
-    width: auto;
-}
-
-.nav-menu {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu a {
-  color: #a2d5f2;
-  text-decoration: none;
-  padding: 15px 25px;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-menu a:hover {
-  background-color: #82c0cc;
-  color: #003845;
-  box-shadow: 0 4px 10px rgba(130,192,204,0.5);
-}
-
+/* Styles for each individual car block */
 .car-block {
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Light gray border */
     background-color: white;
     padding: 15px;
     margin: 20px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Slight depth effect */
 }
 
+/* Images inside the car block */
 .car-block img {
     display: block;
     margin: 10px 0;
-    max-width: 100%;
-    border-radius: 5px;
+    max-width: 100%; /* Responsive image width */
+    border-radius: 5px; /* Rounded corners */
 }

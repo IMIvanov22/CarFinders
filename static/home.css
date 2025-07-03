@@ -1,127 +1,147 @@
+/* General page styles */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f8fc;
-    color: #1a1a1a;
+    background-color: #f4f8fc; /* Light blue-gray background */
+    color: #1a1a1a; /* Dark text color */
 }
 
+/* Hero section container */
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(to bottom right, #0073e6, #cce6ff);
-    color: white;
+    background: linear-gradient(to bottom right, #0073e6, #cce6ff); /* Blue gradient background */
+    color: white; /* White text */
 }
 
+/* Hero main heading */
 .hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
 }
 
+/* Hero paragraphs */
 .hero p {
     font-size: 20px;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the paragraph */
 }
 
+/* Styling for emphasized keywords in hero */
 .keywords em {
     font-style: italic;
     font-weight: bold;
-    color: #003366;
-    background-color: #ffffffaa;
+    color: #003366; /* Dark blue text */
+    background-color: #ffffffaa; /* Semi-transparent white background */
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 4px; /* Rounded corners */
 }
 
+/* Introduction section */
 .intro {
     text-align: center;
     padding: 40px 20px;
-    background-color: #e6f0ff;
+    background-color: #abcbfc; /* Very light blue background */
 }
 
+/* Intro heading */
 .intro h2 {
     font-size: 32px;
-    color: #004080;
+    color: #004080; /* Medium dark blue */
 }
 
+/* Intro paragraph */
 .intro p {
     font-size: 18px;
     max-width: 800px;
-    margin: 10px auto;
+    margin: 10px auto; /* Center with margin */
 }
 
+/* Car gallery section */
 .car-gallery {
     padding: 40px 20px;
     text-align: center;
 }
 
+/* Car gallery heading */
 .car-gallery h2 {
     font-size: 30px;
     color: #004080;
     margin-bottom: 20px;
 }
 
+/* Container for car images */
 .car-images {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Wrap images on smaller screens */
 }
 
+/* Individual car images */
 .car-images img {
     width: 300px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
 }
 
+/* Features section */
 .features {
-    background-color: #f0f6ff;
+    background-color: #f0f6ff; /* Very light blue background */
     padding: 40px 20px;
     text-align: center;
 }
 
+/* Features heading */
 .features h2 {
     font-size: 28px;
     color: #004080;
     margin-bottom: 20px;
 }
 
+/* Features list */
 .features ul {
-    list-style: none;
+    list-style: none; /* Remove default bullets */
     padding: 0;
     font-size: 18px;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center list */
 }
 
+/* Each feature list item */
 .features li {
     margin: 10px 0;
 }
 
+/* Testimonials section */
 .testimonials {
     background-color: #e6f0ff;
     padding: 40px 20px;
     text-align: center;
 }
 
+/* Testimonials heading */
 .testimonials h2 {
     font-size: 28px;
     color: #004080;
     margin-bottom: 20px;
 }
 
+/* Blockquote styling for testimonials */
 .testimonials blockquote {
     font-style: italic;
     font-size: 18px;
     max-width: 700px;
     margin: 20px auto;
-    color: #333;
+    color: #333; /* Dark gray text */
 }
 
+/* Author name in testimonials */
 .testimonials span {
     display: block;
     margin-top: 10px;
     font-weight: bold;
-    color: #004080;
+    color: #004080; /* Blue color */
 }

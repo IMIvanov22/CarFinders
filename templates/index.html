@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding and page title -->
     <meta charset="UTF-8">
     <title>CarFinders | Home</title>
+
+    <!-- Link to global styles -->
     <link rel="stylesheet" href="/static/style.css">
+    <!-- Link to page-specific styles -->
     <link rel="stylesheet" href="/static/home.css">
 </head>
 <body>
 
+    <!-- Navigation bar -->
     <div class="navbar">
+        <!-- Logo that links to homepage -->
         <a href="/" class="logo-fixed">
             <img src="/static/images/CarFinders logo.png" alt="CarFinders Logo">
         </a>
+
+        <!-- Navigation menu -->
         <ul class="nav-menu">
             <li><a href="/">Home</a></li>
             <li><a href="/pages/searchforcars.html">Found Cars</a></li>
@@ -20,18 +28,22 @@
         </ul>
     </div>
 
+    <!-- Hero section with main welcome message -->
     <header class="hero">
         <h1>Welcome to CarFinders</h1>
         <p>Your trusted place to discover the perfect car through real user reviews.</p>
+        <!-- Suggested example keywords for users to search -->
         <p class="keywords">Start by entering a keyword like <em>"reliable"</em>, <em>"sporty"</em>, or <em>"family"</em>.</p>
     </header>
 
+    <!-- Introduction section explaining what the site does -->
     <section class="intro">
         <h2>Why Choose CarFinders?</h2>
         <p>We analyze thousands of real user reviews using natural language processing (NLTK) to help you find the car that truly fits your lifestyle and needs.</p>
         <p>Whether you're looking for a fuel-efficient city car, a spacious family SUV, or a powerful sports car — we've got you covered.</p>
     </section>
 
+    <!-- Gallery of popular car images -->
     <section class="car-gallery">
         <h2>Popular Picks</h2>
         <div class="car-images">
@@ -40,8 +52,7 @@
             <img src="/static/images/tesla model 3.jfif" alt="Electric Car">
         </div>
     </section>
-
-    <section class="features">
+<section class="features">
         <h2>Our Features</h2>
         <ul>
             <li>Smart keyword-based search powered by NLTK</li>

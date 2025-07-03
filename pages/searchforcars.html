@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Car Search</title>
+
+    <!-- Link to main CSS file -->
     <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Link to specific CSS for search page -->
     <link rel="stylesheet" href="/static/searchforcars.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <div class="navbar">
+        <!-- Logo section -->
         <a class="logo-fixed">
             <img src="/static/images/CarFinders logo.png" alt="CarFinders Logo">
         </a>
+
+        <!-- Navigation menu -->
         <ul class="nav-menu">
             <li><a href="/">Home</a></li>
             <li><a href="/pages/searchforcars.html">Found Cars</a></li>
@@ -18,22 +26,30 @@
             <li><a href="/pages/aboutus.html">About Us</a></li>
         </ul>
     </div>
+
+    <!-- Page Heading -->
     <h1>Search for Cars by Keyword</h1>
 
+    <!-- Search Form -->
     <form id="search-form" method="POST">
         <label>Enter keyword (like "fast", "efficient", "reliable")</label><br>
         <input type="text" name="keyword" required>
         <button type="submit">Search</button>
     </form>
 
+    <!-- Container where search results will appear -->
     <div id="results-container"></div>
 
+    <!-- JavaScript to handle the search form -->
     <script>
+    // Add event listener to handle form submission without reloading the page
     document.getElementById("search-form").addEventListener("submit", function (e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent default form submit (page reload)
 
+        // Get the value of the input field
         const keyword = document.querySelector('input[name="keyword"]').value;
 
+        // Send POST request to /GetCar with the keyword
         fetch('/GetCar', {
             method: 'POST',
             headers: {
@@ -41,25 +57,29 @@
             },
             body: `keyword=${encodeURIComponent(keyword)}`
         })
-        .then(response => response.json())
+        .then(response => response.json()) // Parse JSON response
         .then(data => {
             const resultsContainer = document.getElementById("results-container");
-            resultsContainer.innerHTML = "";
+            resultsContainer.innerHTML = ""; // Clear previous results
 
+            // If matches are found
             if (data.result && data.result.length > 0) {
+                // Add heading showing the search term
                 const heading = document.createElement("h2");
                 heading.textContent = `Results for "${data.keyword}"`;
                 resultsContainer.appendChild(heading);
 
+                // Loop through matched cars
                 data.result.forEach(car => {
                     const carContainer = document.createElement("div");
                     carContainer.classList.add("car-block");
 
+                    // Add car name with clickable link
                     const carName = document.createElement("h3");
                     if (car.link) {
                         const link = document.createElement("a");
                         link.href = car.link;
-                        link.target = "_blank";
+                        link.target = "_blank"; // Open link in new tab
                         link.textContent = car.name;
                         carName.appendChild(link);
                     } else {
@@ -67,14 +87,16 @@
                     }
                     carContainer.appendChild(carName);
 
+                    // Add car image if available
                     if (car.image) {
                         const img = document.createElement("img");
                         img.src = `/static/images/${car.image}`;
                         img.alt = car.name;
-                        img.style.width = "300px";
+                        img.style.width = "300px"; // Resize image
                         carContainer.appendChild(img);
                     }
 
+                    // Add list of matching reviews
                     const ul = document.createElement("ul");
                     car.matched_reviews.forEach(review => {
                         const li = document.createElement("li");
@@ -83,13 +105,16 @@
                     });
                     carContainer.appendChild(ul);
 
+                    // Append full car block to results container
                     resultsContainer.appendChild(carContainer);
                 });
             } else {
+                // No matches found message
                 resultsContainer.innerHTML = `<p>No matching reviews found.</p>`;
             }
         })
         .catch(error => {
+            // Show error message if fetch fails
             console.error('Error:', error);
             document.getElementById("results-container").innerHTML = `<p>Error loading results.</p>`;
         });

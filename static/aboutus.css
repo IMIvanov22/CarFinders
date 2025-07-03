@@ -1,63 +1,73 @@
+/* Body styles with a blue gradient background and no margin or padding */
 body {
     background: linear-gradient(135deg, #04646b 0%, #66a6ff 100%);
     margin: 0;
     padding: 0;
 }
+
+/* Container for the About Us section with centered text and max width */
 .about-us {
     max-width: 900px;
-    margin: 50px auto;
+    margin: 50px auto; /* Center horizontally and add vertical spacing */
     padding: 0 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    color: #333; /* Dark gray text */
     text-align: center;
 }
 
+/* Heading inside About Us section */
 .about-us h1 {
-    font-size: 2.8rem;
+    font-size: 2.8rem; /* Large font size */
     margin-bottom: 15px;
-    color: #222;
+    color: #222; /* Slightly darker text */
 }
 
+/* Paragraph inside About Us section */
 .about-us p {
     font-size: 1.1rem;
     margin-bottom: 40px;
     color: #222;
 }
 
+/* First row of team members, flex container for horizontal layout and wrapping */
 .team-row-1 {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 40px; /* Space between team members */
+    flex-wrap: wrap; /* Allow items to wrap to next line */
     margin-bottom: 40px;
 }
 
+/* Individual team member card styling */
 .member {
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 220px;
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+    width: 220px; /* Fixed width */
     padding: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth transform on hover or interaction */
 }
 
+/* Team member photo styles */
 .member img {
     width: 100%;
     height: auto;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Make image circular */
+    object-fit: cover; /* Cover the container without distortion */
     margin-bottom: 15px;
-    border: 3px solid #007BFF;
+    border: 3px solid #007BFF; /* Blue border */
 }
 
+/* Team member name styling */
 .member h3 {
     font-size: 1.3rem;
     margin-bottom: 8px;
-    color: #007BFF;
+    color: #007BFF; /* Blue text */
 }
 
+/* Team member role or description */
 .member p {
     font-size: 1rem;
-    color: #666;
+    color: #666; /* Medium gray */
     font-weight: 500;
 }

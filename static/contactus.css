@@ -1,91 +1,102 @@
+/* Wrapper for the entire contact section, centers content both vertically and horizontally */
 .contact-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
-    background: linear-gradient(135deg, #04646b 0%, #66a6ff 100%);
-    min-height: 100vh;
+    background: linear-gradient(135deg, #04646b 0%, #66a6ff 100%); /* Gradient background */
+    min-height: 100vh; /* Full viewport height */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Contact card container with semi-transparent white background */
 .contact-card {
     background: rgba(255, 255, 255, 0.85);
     padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
     max-width: 700px;
-    width: 200%;
+    width: 200%; /* Makes the card wider than max-width, might be intentional for layout */
     position: relative;
 }
 
+/* Heading inside the contact card */
 .contact-card h2 {
     margin-top: 0;
     font-size: 28px;
-    color: #004e92;
+    color: #004e92; /* Dark blue text */
     margin-bottom: 20px;
     font-weight: 700;
 }
 
+/* Paragraphs inside the contact card */
 .contact-card p {
     font-size: 15px;
     margin-bottom: 25px;
-    color: #444;
+    color: #444; /* Medium dark gray */
 }
 
+/* Form group wrapper to space form fields */
 .contact-form .form-group {
     margin-bottom: 20px;
 }
 
+/* Labels for form inputs */
 .contact-form label {
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
-    color: #222;
+    color: #222; /* Dark text */
 }
 
+/* Styling for text inputs and textarea */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     max-width: 100%;
     padding: 10px 14px;
     border: none;
-    border-radius: 12px;
+    border-radius: 12px; /* Rounded corners */
     font-size: 14px;
-    background: #f0f4ff;
-    box-shadow: inset 3px 3px 6px #c8d2ff, inset -3px -3px 6px #ffffff;
+    background: #f0f4ff; /* Light blue background */
+    box-shadow: inset 3px 3px 6px #c8d2ff, inset -3px -3px 6px #ffffff; /* Inner shadows for a soft 3D effect */
     transition: box-shadow 0.3s ease, background 0.3s ease;
-    resize: vertical;
+    resize: vertical; /* Allow vertical resizing on textarea */
     font-family: inherit;
     box-sizing: border-box;
 }
 
+/* Focus styles for inputs and textarea */
 .contact-form input:focus,
 .contact-form textarea:focus {
-    background: #e0ebff;
-    box-shadow: 0 0 8px 2px #004e92cc;
+    background: #e0ebff; /* Slightly darker blue background */
+    box-shadow: 0 0 8px 2px #004e92cc; /* Blue glow */
     outline: none;
 }
 
+/* Submit button styling */
 .contact-form button {
-    background: linear-gradient(135deg, #004e92, #000428);
+    background: linear-gradient(135deg, #004e92, #000428); /* Dark blue gradient */
     color: white;
     border: none;
     padding: 14px 0;
     font-size: 16px;
     font-weight: 700;
-    border-radius: 15px;
+    border-radius: 15px; /* Rounded corners */
     cursor: pointer;
     width: 100%;
-    box-shadow: 0 6px 18px rgba(0, 78, 146, 0.5);
+    box-shadow: 0 6px 18px rgba(0, 78, 146, 0.5); /* Soft shadow */
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Button hover effect */
 .contact-form button:hover {
-    background: linear-gradient(135deg, #002a60, #000428);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(0, 40, 80, 0.6);
+    background: linear-gradient(135deg, #002a60, #000428); /* Darker gradient */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 10px 22px rgba(0, 40, 80, 0.6); /* Stronger shadow */
 }
 
+/* Minimum height for textarea */
 .contact-form textarea {
     min-height: 80px;
 }
