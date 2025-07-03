@@ -37,9 +37,9 @@
 
 ## 📄Documents
 
-<a href="https://github.com/codingburgas/finance-challenge-plan-b/blob/main/docs/Plan%20B_Documentation.docx">Documentation </a>
+<a href="https://github.com/IMIvanov22/CarFinders/blob/main/documentation/CarFinders.docx">Documentation </a>
 
-<a href="https://github.com/IMIvanov22/CarFinders/blob/main/documentation/CarFinders.docx">Presentation </a>
+<a href="https://github.com/IMIvanov22/CarFinders/blob/main/documentation/CarFinders%20Presentation.pptx">Presentation </a>
 
 <hr>
 
