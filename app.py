@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from flask import send_from_directory
 from flask import Flask, render_template, send_from_directory
@@ -115,6 +115,27 @@ def index():
             result = filtered_cars[:3]
 
     return render_template("index.html", result=result, keyword=keyword)
+
+@app.route('/GetCar', methods=["GET", "POST"])
+def GetCar():
+    result = None
+    keyword = ""
+
+    if request.method == "POST":
+        keyword = request.form["keyword"].lower()
+        filtered_cars = []
+
+        for car in cars:
+            matched_reviews = [review for review in car["reviews"] if keyword in review.lower()]
+            if matched_reviews:
+                filtered_cars.append({
+                    "name": car["name"],
+                    "matched_reviews": matched_reviews
+                })
+
+        if filtered_cars:
+            result = filtered_cars[:3]
+        return jsonify({"result": result, "keyword": keyword})
 
 if __name__ == "__main__":
     app.run(debug=True)

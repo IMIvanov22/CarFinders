@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Car Selection</title>
+    <title>CarFinders Home</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+
     <div class="navbar">
         <a href="/" class="logo-fixed">
             <img src="/static/images/CarFinders logo.png" alt="CarFinders Logo">
         </a>
-      <ul class="nav-menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/pages/searchforcars.html">Found Cars</a></li>
-        <li><a href="/pages/contactus.html">Contact Us</a></li>
-        <li><a href="/pages/aboutus.html">About Us</a></li>
-    </ul>
+        <ul class="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/searchforcars.html">Found Cars</a></li>
+            <li><a href="/pages/contactus.html">Contact Us</a></li>
+            <li><a href="/pages/aboutus.html">About Us</a></li>
+        </ul>
     </div>
 
-    <form method="POST">
-        <label>Enter a word or phrase (e.g. "cheap", "sporty", "space"):</label><br>
-        <input type="text" name="keyword" required>
-        <button type="submit">Search</button>
-    </form>
-
-    {% if result %}
-        <h2>Found cars with keyword: "{{ keyword }}"</h2>
-        {% for car in result %}
-            <h3>{{ car.name }}</h3>
-            <ul>
-                {% for review in car.matched_reviews %}
-                    <li>{{ review }}</li>
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    {% elif keyword %}
-        <p>No reviews found with this word/phrase.</p>
-    {% endif %}
+    <div style="padding: 50px; text-align: center;">
+        <h1>Welcome to CarFinders</h1>
+        <p style="font-size: 20px; max-width: 700px; margin: 0 auto;">
+            Your trusted place to discover the perfect car through real user reviews.
+            Start by entering a keyword such as <em>"reliable"</em>, <em>"sporty"</em>, or <em>"family"</em>.
+        </p>
+    </div>
 
 </body>
 </html>
+

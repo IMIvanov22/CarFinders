@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/static/style.css">
     <meta charset="UTF-8">
-    <title>Избор на кола</title>
+    <title>Car Selection</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-            <div class="navbar">
+    <div class="navbar">
         <a href="/" class="logo-fixed">
             <img src="/static/images/CarFinders logo.png" alt="CarFinders Logo">
         </a>
@@ -17,5 +17,67 @@
         <li><a href="/pages/aboutus.html">About Us</a></li>
     </ul>
     </div>
-    </body>
+
+    
+
+    <form id="search-form" method="POST">
+    <label>Enter a word or phrase (e.g. "cheap", "sporty", "space"):</label><br>
+    <input type="text" name="keyword" required>
+    <button type="submit">Search</button>
+</form>
+
+<div id="results-container">
+    <!-- Results will be inserted here -->
+</div>
+
+<script>
+    document.getElementById("search-form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop the page from reloading
+
+        const keyword = document.querySelector('input[name="keyword"]').value;
+
+        fetch('/GetCar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `keyword=${encodeURIComponent(keyword)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            const resultsContainer = document.getElementById("results-container");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            if (data.result && data.result.length > 0) {
+                const heading = document.createElement("h2");
+                heading.textContent = `Found cars with keyword: "${data.keyword}"`;
+                resultsContainer.appendChild(heading);
+
+                data.result.forEach(car => {
+                    const carName = document.createElement("h3");
+                    carName.textContent = car.name;
+                    resultsContainer.appendChild(carName);
+
+                    const ul = document.createElement("ul");
+                    car.matched_reviews.forEach(review => {
+                        const li = document.createElement("li");
+                        li.textContent = review;
+                        ul.appendChild(li);
+                    });
+
+                    resultsContainer.appendChild(ul);
+                });
+            } else {
+                resultsContainer.innerHTML = `<p>No reviews found with this word/phrase.</p>`;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById("results-container").innerHTML = `<p>Error loading results.</p>`;
+        });
+    });
+</script>
+
+
+</body>
 </html>
