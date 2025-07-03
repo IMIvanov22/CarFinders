@@ -21,6 +21,8 @@ cars = [
     },
     {
         "name": "BMW M3",
+        "image": "bmw m3.jfif",
+        "link": "https://www.mobile.bg/obiava-11750609537423765-bmw-m3-competition",
         "reviews": [
             "Extremely fast and sporty",
             "Expensive but powerful",
@@ -31,6 +33,8 @@ cars = [
     },
     {
         "name": "Volkswagen Passat",
+        "image": "vw passat.jfif",
+        "link": "https://www.mobile.bg/obiava-11740497149174873-vw-passat-lizing-1-6tdi-105ks-6-skorosti-evro-5",
         "reviews": [
             "Comfortable for long trips",
             "Lots of interior space",
@@ -41,6 +45,8 @@ cars = [
     },
     {
         "name": "Audi A4",
+        "image": "https://www.mobile.bg/obiava-11746870045791375-audi-a4-matrix-face-40-tdi-quattro-digital-distronik-kamer",
+        "link": "audi a4.jfif",
         "reviews": [
             "Very smooth driving experience",
             "High-quality interior",
@@ -51,6 +57,8 @@ cars = [
     },
     {
         "name": "Mercedes-Benz C-Class",
+        "image": "mercedes benz.jfif",
+        "link": "https://www.mobile.bg/obiava-11734076006609311-mercedes-benz-c-200-amg-digital-face-de-distr-pano-camera-car-play-liz",
         "reviews": [
             "Luxury in every detail",
             "Great for business trips",
@@ -61,6 +69,8 @@ cars = [
     },
     {
         "name": "Ford Mustang",
+        "image": "ford mustang.jfif",
+        "link": "https://www.mobile.bg/obiava-11742329052796393-ford-mustang-10-2024god",
         "reviews": [
             "Classic American muscle",
             "Powerful engine sound",
@@ -71,6 +81,8 @@ cars = [
     },
     {
         "name": "Honda Civic",
+        "image": "honda civic.jfif",
+        "link": "https://www.mobile.bg/obiava-11747216958559402-honda-civic-1-0-vtec-turbo-elegance-mt",
         "reviews": [
             "Very reliable and efficient",
             "Easy to drive and park",
@@ -81,6 +93,8 @@ cars = [
     },
     {
         "name": "Tesla Model 3",
+        "image": "tesla model 3.jfif",
+        "link": "https://www.mobile.bg/obiava-11742388625862648-tesla-model-3-long-range-awd",
         "reviews": [
             "Instant torque and smooth ride",
             "Autopilot is a game-changer",
