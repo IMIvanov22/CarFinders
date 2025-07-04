@@ -1,4 +1,3 @@
-<a href="http://127.0.0.1:5000/"><img src="http://127.0.0.1:5000/static/images/CarFinders%20logo.png" alt="CarFinders logo" width=52px /></a>
 <h1 align="center">CarFinders</h1>
 
 ## 🧒 Our Team
